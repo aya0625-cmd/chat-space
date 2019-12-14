@@ -1,0 +1,28 @@
+.chat-main
+  .chat-main__top
+    .chat-main__top__group
+      %p.chat-main__top__group__group-name
+        techcamp
+      %p.chat-main__top__group__member
+        member
+    =link_to "#", class: "edit__btn" do
+      Edit
+  .chat-main__center
+    .chat-main__message
+      .chat-main__message__data
+        %p.chat-main__message__data__name
+          aya
+        %p.chat-main__message__data__date
+          2019/12/13(Tue) 20:29:07
+      .chat-main__message__text
+        こんにちは
+  .chat-main__bottom
+    %form.chat-form{:action => "#"}
+      %input{:type => "hidden"}
+      .input-box
+        %input.input-box__text{:type => "text", :placeholder => "type a message"}
+        %label{class: "input-box__image"}
+          = icon('fas', 'image')
+          .file-btn
+            %input{type: "file"}
+      %input.submit-btn{:type => "submit", :value => "Send"}      
