@@ -17,12 +17,12 @@
       .chat-main__message__text
         こんにちは
   .chat-main__bottom
-    %form.chat-form{:action => "#"}
-      %input{:type => "hidden"}
+    %form.chat-form{action: "#"}
+      %input{type: "hidden"}
       .input-box
-        %input.input-box__text{:type => "text", :placeholder => "type a message"}
-        %label{class: "input-box__image"}
+        %input.input-box__text{type: "text", placeholder: "type a message"}
+        %label.input-box__image
           = icon('fas', 'image')
           .file-btn
             %input{type: "file"}
-      %input.submit-btn{:type => "submit", :value => "Send"}      
+      %input.submit-btn{type: "submit", value: "Send"}      
