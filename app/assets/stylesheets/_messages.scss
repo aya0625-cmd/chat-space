@@ -1,0 +1,172 @@
+html,body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  display: block;
+}
+
+@mixin size($height, $width, $padding) {
+  height: $height;
+  width: $width;
+  padding: $padding;
+}
+
+@mixin color($backgroundcolor, $color) {
+  background-color: $backgroundcolor;
+  color: $color;
+}
+
+.wrapper {
+  @include size(100%, 100%, 0);
+  .side-bar {
+    @include size(100%, 300px, 0);
+    float: left;
+    &__top {
+      @include color(#253141, #ffffff);
+      @include size(100px, 100%, 0 20px);
+      display: flex;
+      align-items: center;
+      &__box {
+        width: 100%;
+        &__user-name {
+         @include color(0, #ffffff);
+         font-size: 16px;
+         font-weight: bold;
+         line-height: 20px;
+         float: left;
+        }
+        &__menu {
+          @include size(20px, 60px, 0);
+          color: #ffffff;
+          display: flex;
+          justify-content: flex-end;
+          float: right;
+          li{
+            margin-left: 5px;
+          }
+            a{
+              color: #ffffff;
+            }
+          
+        }
+      } 
+    }
+    &__bottom {
+      @include size(calc(100% - 100px), 100%, 20px 20px 40px);
+      @include color(#2f3e51, #ffffff);
+      font-weight: bold;
+      &__box {
+        margin-bottom: 40px;
+        &__group-name {
+          font-size: 15px;
+          margin-bottom: 5px;
+        }
+        &__new-message {
+          font-size: 11px;
+        }
+      }
+    }
+  }
+  .chat-main {
+    @include size(100%, calc(100vw - 300px), 0);
+    position: relative;
+    float: right;
+    &__top {
+      @include size(100px, 100%, 0 40px);
+      @include color(#ffffff, 0);
+      border-bottom-color: #eeeeee;
+      &__group {
+        display: inline-block;
+        padding-top: 35px;
+        &__group-name {
+          @include color(0, #333333);
+          font-size: 20px;
+          margin-bottom: 15px;
+        }
+        &__member {
+          @include color(0, #999999);
+          font-size: 12px;
+          text-decoration: none;
+        }
+      }
+      .edit__btn {
+        @include size(40px, auto, 0 20px);
+        @include color(0, #38aef0);
+        border: thin solid #38aef0;
+        text-decoration: none;
+        list-style: none;
+        line-height: 40px;
+        margin-top: 28px;
+        float: right;
+      }
+    }
+    .chat-main__center {
+      @include size(calc(100% - 190px), 100%, 35px 40px 0);
+      @include color(#fafafa, 0);
+      .chat-main__message {
+        &__data {
+          display: flex;
+          margin-bottom: 12px;
+          &__name {
+            @include color(0, #333333);
+            font-size: 16px;
+            font-weight: bold;
+          }
+          &__date {
+            @include color(0, #999999);
+            font-size: 12px;
+            margin-left: 15px;
+            float: right;
+          }
+        }
+        &__text {
+          @include color(0, #434a54);
+          font-size: 14px;
+          margin-bottom: 46px;
+        }
+      }
+    }
+    .chat-main__bottom {
+      @include color(#d2d2d2, 0);
+      @include size(90px, 100%, 20px 40px);
+      position: absolute;
+      bottom: 0;
+      .chat-form {
+        display: flex;
+        .input-box {
+          width: 100%;
+          position: relative;
+          &__text {
+            @include size(50px, 100%, 0 40px 0 10px);
+          }
+          .input-box__image {
+            position: absolute;
+            top: 12px;
+            right: 10px;
+            .fas {
+            font-size: 1.7rem;
+            }
+          }
+          .file-btn {
+            display: none;
+          }
+        }
+        .submit-btn {
+          @include size(50px, auto, 0 30px);
+          @include color(#38aef0, #ffffff);
+          margin-left: 15px;
+          list-style: none;
+          cursor: pointer;
+        }
+      }
+    } 
+  }
+}
+  
