@@ -2,13 +2,13 @@
   .side-bar__top
     .side-bar__top__box
       %p.side-bar__top__box__user-name
-        aya
+        = current_user.name
       %ul.side-bar__top__box__menu
         %li.side-bar__top__box__menu___new-group
-          =link_to "#" do
+          =link_to  do
             =icon('fas', 'edit')
         %li.side-bar__top__box__menu__edit-account
-          =link_to "#" do
+          =link_to edit_user_path(current_user) do
             =icon('fas', 'cog')
   .side-bar__bottom
     .side-bar__bottom__box
