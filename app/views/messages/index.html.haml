@@ -1,2 +1,9 @@
 .wrapper
-  = render "main_chat"
+  .side-bar
+    =render "shared/side_bar"
+  .chat-main
+    =render "main_top", locals: {message: @messages}
+    .chat-main__center
+      =render @messages
+    =render "main_bottom"
+         

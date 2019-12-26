@@ -1,11 +1,11 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:edit, :update]
   def index
-    @groups = current_user.groups
   end
 
   def new
     @group = Group.new
+    @group.users << current_user
     
   end
   
@@ -18,9 +18,11 @@ class GroupsController < ApplicationController
     end    
   end
 
+  
+
   def update
     if @group.update(group_params)
-      redirect_to root_path, natice: 'グループを更新しました'
+      redirect_to group_messages_path(@group), notice: 'グループを更新しました'
     else
       render :edit
     end
