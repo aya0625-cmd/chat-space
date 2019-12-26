@@ -1,0 +1,11 @@
+.chat-main__top
+  .chat-main__top__group
+    %p.chat-main__top__group__group-name
+      =@group.name   
+    %p.chat-main__top__group__member
+      MENBER:
+      -@group.users.each do |user|
+        = user.name        
+  =link_to edit_group_path(@group.id), class: "edit__btn" do
+    Edit
+    

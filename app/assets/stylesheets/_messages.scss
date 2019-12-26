@@ -148,10 +148,10 @@ html,body {
         .input-box {
           width: 100%;
           position: relative;
-          &__text {
+          &__form {
             @include size(50px, 100%, 0 40px 0 10px);
           }
-          .input-box__image {
+          &__image {
             position: absolute;
             top: 12px;
             right: 10px;
