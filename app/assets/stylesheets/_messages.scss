@@ -60,22 +60,22 @@ html,body {
     }
     &__bottom {
       @include size(calc(100% - 100px), 100%, 20px 20px 40px);
-      @include color(#2f3e51, #ffffff);
-      font-weight: bold;
-      text-decoration: none;
+      background-color: #2f3e51;
+      
       &__box {
         margin-bottom: 40px;
-        
-        &__group-name {
+        a {
+          text-decoration: none;
+        }
+          &__group-name {
           color: #ffffff;
           font-size: 15px;
           margin-bottom: 5px;
-        }
-        &__new-message {
+          }
+          &__new-message {
           color: #ffffff;
           font-size: 11px;
-         
-        }
+          }
       }
     }
   }
