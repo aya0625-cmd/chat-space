@@ -115,6 +115,7 @@ html,body {
     .chat-main__center {
       @include size(calc(100% - 190px), 100%, 35px 40px 0);
       @include color(#fafafa, 0);
+      overflow: auto;
       .chat-main__message {
         &__data {
           display: flex;
