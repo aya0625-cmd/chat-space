@@ -1,8 +1,8 @@
 .chat-main__bottom
-  =form_for [@group, @message], html: { class: "chat-form"} do |f|
+  =form_for [@group, @message], html: { class: "chat-form", id: "new_message"} do |f|
     .input-box
       =f.text_field :text, class: 'input-box__form', placeholder: 'type a message'
-      =f.label :image, class: 'input-box__image' do
+      =f.label :image, class: 'input-box__image', id: 'message_text' do
         = icon('fas', 'image', class: 'icon')
         .file-btn
           =f.file_field :image, class: 'file-btn'
