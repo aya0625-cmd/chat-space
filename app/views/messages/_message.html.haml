@@ -1,11 +1,11 @@
-.chat-main__message
+.chat-main__message{data: {message: {id: message.id}}}
   .chat-main__message__data
     %p.chat-main__message__data__name
       =message.user.name
     %p.chat-main__message__data__date
       =message.created_at.strftime("%Y年%m月%d日 %H時%M分")
-  .chat-main__message
+  .chat-main__messages
     - if message.text.present?
-      %p.chat-main__message__text
+      %p.chat-main__messages__text
         =message.text
     = image_tag message.image.url, class: 'chat-main__message__image' if message.image.present?
